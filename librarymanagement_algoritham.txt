@@ -1,0 +1,123 @@
+Algorithm :
+===============
+Main Program
+===============
+*Start
+Display Library Management Menu
+1.Add Book
+2.Display All Books
+3.Search Book
+4.Issue Book
+5.Return Book
+6.Update Book
+7.Delete Book
+0.Exit
+*Read user choice
+*Use switch statement to call the corresponding module
+*Repeat steps 2–4 until user selects Exit (0)
+*Stop
+-------------
+1.Add Book
+-------------
+Start
+Open books.txt file in append mode
+Read Book ID, Title, Author, Total Copies
+Set availableCopies = totalCopies
+Write book details into file
+Close file
+Display “Book added successfully”
+Stop
+--------------------
+2.Display All Books
+--------------------
+Start
+Open books.txt file in read mode
+If file is empty or not found
+Display “No books available”
+Else
+Display table header
+Read each book record
+Display Book ID, Title, Author, Available Copies
+Close file
+Stop
+--------------
+3.Search Book
+--------------
+Start
+Open books.txt in read mode
+Read Book ID to search
+Read each record from file
+If Book ID matches
+Display full book details
+Set found flag
+If no match found
+Display “Book not found”
+Close file
+Stop
+--------------
+4.Issue Book
+--------------
+Start
+Open books.txt in read mode
+Open temp.txt in write mode
+Read Book ID to issue
+For each record in file
+If Book ID matches and available copies > 0
+Decrement available copies
+Write updated record to temp file
+Display “Book issued successfully”
+Else
+Copy record unchanged to temp file
+Replace original file with temp file
+Close all files
+Stop
+---------------
+5.Return Book
+---------------
+Start
+Open books.txt in read mode
+Open temp.txt in write mode
+Read Book ID to return
+For each record in file
+If Book ID matches and available copies < total copies
+Increment available copies
+Write updated record to temp file
+Display “Book returned successfully”
+Else
+Copy record unchanged
+Replace original file with temp file
+Close all files
+Stop
+---------------
+6.Update Book
+---------------
+Start
+Open books.txt in read mode
+Open temp.txt in write mode
+Read Book ID to update
+For each record in file
+If Book ID matches
+Read new Title, Author, Total Copies
+Adjust available copies
+Write updated record
+Else
+Copy original record
+Replace original file with temp file
+Close all files
+Stop
+--------------
+7.Delete Book
+--------------
+Start
+Open books.txt in read mode
+Open temp.txt in write mode
+Read Book ID to delete
+For each record in file
+If Book ID does NOT match
+Copy record to temp file
+Else
+Skip the record
+Replace original file with temp file
+Display success or not found message
+Close all files
+Stop
